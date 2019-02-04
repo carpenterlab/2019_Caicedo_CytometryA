@@ -15,7 +15,7 @@ https://hub.docker.com/r/jccaicedo/deepcell/
 
 ## Contents
 
-### `unet4nuclei`: nucleus segmentation using U-Net
+### Nucleus segmentation using U-Net: [unet4nuclei](unet4nuclei/)
 
 Set of notebooks for training and testing a U-net architecture. 
 The essential notebooks are numbered and ordered by functionalities: 
@@ -27,24 +27,24 @@ The `examples` directory contains example configuration files with pre-defined p
 It's important to update the path to the root directory to make an initial run. 
 Everything else can be tuned later according to your needs.
 
-### Evaluation toolkit
+### Evaluation toolkit: [evaluation.py](unet4nuclei/utils/evaluation.py)
 
 Example code for running evaluation is implemented in the notebook #4 of the previous package.
 The actual evaluation functions are implemented in the `unet4nuclei/utils/evaluation.py` module.
 This module can be reused in other scripts if necessary, or notebook #4 can be adapted to generate an evaluation report.
 
-### CellProfiler pipelines
+### Segmentation pipelines: [CellProfiler](CellProfiler/)
 
 As part of our benchmark, we created two CellProfiler pipelines to compare against deep learning models.
 These pipelines and the associated scripts can be found in the CellProfiler directory.
 
-### Random Forest segmentations
+### Random Forest segmentations: [classic-ml](classic-ml/)
 
 We used Ilastik to create a machine-learning-based workflow to generate segmentations using the same annotations in our dataset.
 The scripts adapt the data and Ilastik files to run experiments and generate probability masks.
 The resulting segmentations can be evaluated using the same toolkit and notebook #4 of the `unet4nuclei` directory.
 
-### Cell cycle measurements
+### Cell cycle measurements: [cell-cycle](cell-cycle/)
 
 We implemented a Z'-factor test to quantify the impact of segmentations on cell cycle when applying certain drugs to cells.
 The segmentations are initially generated with U-Net or CellProfiler, and then the DNA content of single cells is measured.
